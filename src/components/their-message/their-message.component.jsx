@@ -1,3 +1,5 @@
+import './their-message.styles.css'
+
 const TheirMessage = ({ lastMessage, message }) => {
   const isFirtsMessageByUser =
     !lastMessage || lastMessage.sender.username !== message.sender.username;

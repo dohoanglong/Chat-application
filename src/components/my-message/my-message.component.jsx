@@ -1,3 +1,5 @@
+import './my-message.styles.css'
+
 const MyMessage = ({message}) => {
     if(message?.attachments?.length > 0) {
         return (

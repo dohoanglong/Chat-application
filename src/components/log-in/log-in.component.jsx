@@ -1,9 +1,14 @@
 import { useState } from "react";
 import axios from "axios";
 
+import FormInput from '../form-input/form-input.component'
+import CustomButton from '../custom-button/custom-button.component'
+
+import './log-in.styles.css'
+
 const projectID = '67c54b93-59ba-429f-90b2-1daba09def99';
 
-const LoginForm = () => {
+const Login = () => {
   const [state, setstate] = useState({ username: "", password: "" });
   const [error, setError] = useState('');
 
@@ -34,30 +39,28 @@ const LoginForm = () => {
   return (
     <div className="wrapper">
       <div className="form">
-        <h1 className="title">Chat Application</h1>
+        <h1 className="title">Login</h1>
         <form onSubmit={handleSubmit}>
-          <input
+          <FormInput
             type="text"
             value={state.username}
-            onChange={handleChange}
+            handleChange={handleChange}
             name='username'
-            className="input"
             placeholder="Username"
             required
           />
-          <input
+          <FormInput
             type="password"
             value={state.password}
-            onChange={handleChange}
+            handleChange={handleChange}
             name='password'
-            className="input"
             placeholder="Password"
             required
           />
           <div align="center">
-            <button type="submit" className="button">
-              <span>Start chatting</span>
-            </button>
+            <CustomButton type="submit">
+              Start chatting
+            </CustomButton>
           </div>
         </form>
         <h2 className='error'>{error}</h2>
@@ -66,5 +69,5 @@ const LoginForm = () => {
   );
 };
 
-export default LoginForm;
+export default Login;
 
